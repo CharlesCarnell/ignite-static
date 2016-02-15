@@ -7182,10 +7182,6 @@ a.skip-main:focus, a.skip-main:active {
       font-size: 30px;
       line-height: 2.08rem;
       margin: 30px 0px 20px 0px; } }
-#body {
-  background: #FFFFFF;
-  display: inline-block; }
-
 #sidebar {
   background: #373942;
   display: inline-block;
@@ -7307,5 +7303,71 @@ a.skip-main:focus, a.skip-main:active {
   content: ""; }
 #sidebar .inner .menu > ul > li.admin > a:before {
   content: ""; }
+
+#body {
+  background: #FFFFFF;
+  display: inline-block;
+  width: calc(100% - 230px); }
+  #body .inner .topbar {
+    height: 70px;
+    border-bottom: 1px solid #EDEDED;
+    position: relative; }
+    #body .inner .topbar .title {
+      position: absolute;
+      top: 50%;
+      left: 30px;
+      transform: translateY(-50%); }
+      #body .inner .topbar .title a {
+        color: #2F9BE7;
+        font-size: 24px; }
+    #body .inner .topbar .breadcrumbs {
+      position: absolute;
+      top: 50%;
+      left: 160px;
+      transform: translateY(-50%); }
+      #body .inner .topbar .breadcrumbs ul {
+        margin: 0;
+        padding: 0;
+        list-style: none; }
+        #body .inner .topbar .breadcrumbs ul li {
+          display: inline-block;
+          margin: 0;
+          padding: 0;
+          position: relative;
+          list-style: none; }
+          #body .inner .topbar .breadcrumbs ul li a {
+            color: #A5A5A5;
+            font-size: 16px;
+            padding-right: 35px; }
+            #body .inner .topbar .breadcrumbs ul li a:after {
+              display: inline-block;
+              font: normal normal normal 14px/1 FontAwesome;
+              font-size: inherit;
+              text-rendering: auto;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+              transform: translate(0, 0);
+              content: "";
+              color: #A5A5A5;
+              position: absolute;
+              top: 54%;
+              right: 12px;
+              transform: translateY(-50%); }
+          #body .inner .topbar .breadcrumbs ul li:last-child a:after {
+            display: none; }
+    #body .inner .topbar .filters {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%); }
+  #body .inner .key ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    #body .inner .key ul li {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      list-style: none; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,59 @@
+.iso_logo_footer_big {
+	width: 79px;
+	height: 69px;
+	background-position: 0 0;
+}
+
+.kcc_logo_footer_big {
+	width: 108px;
+	height: 69px;
+	background-position: -96px 0;
+}
+
+.magnify_glass_medium {
+	width: 34px;
+	height: 34px;
+	background-position: -216px 0;
+}
+
+.magnify_glass_small {
+	width: 25px;
+	height: 25px;
+	background-position: -264px 0;
+}
+
+.pullquote_roundel_big {
+	width: 70px;
+	height: 70px;
+	background-position: -312px 0;
+}
+
+.pullquote_roundel_small {
+	width: 54px;
+	height: 54px;
+	background-position: -396px 0;
+}
+
+.scs_logo_footer {
+	width: 137px;
+	height: 158px;
+	background-position: -468px 0;
+}
+
+.scs_logo_footer_mobile {
+	width: 216px;
+	height: 67px;
+	background-position: -624px 0;
+}
+
+.iso_logo_footer_big, .kcc_logo_footer_big, .magnify_glass_medium, .magnify_glass_small, .pullquote_roundel_big, .pullquote_roundel_small, .scs_logo_footer, .scs_logo_footer_mobile {
+	background-size: 852px 180px;
+}
+
+.no-svg .iso_logo_footer_big, .no-svg .kcc_logo_footer_big, .no-svg .magnify_glass_medium, .no-svg .magnify_glass_small, .no-svg .pullquote_roundel_big, .no-svg .pullquote_roundel_small, .no-svg .scs_logo_footer, .no-svg .scs_logo_footer_mobile {
+	background-image: url("../images/icons-sprite.png");
+}
+
+.iso_logo_footer_big, .kcc_logo_footer_big, .magnify_glass_medium, .magnify_glass_small, .pullquote_roundel_big, .pullquote_roundel_small, .scs_logo_footer, .scs_logo_footer_mobile {
+	background-image: url("../images/icons-sprite.svg");
+}

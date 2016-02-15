@@ -1,0 +1,181 @@
+@mixin hide-text($display:block) {
+	display: $display;
+	overflow: hidden;
+  text-indent: -9999em;
+  line-height: 1px;
+}
+
+@mixin box-sizing($type:border-box) {
+  -webkit-box-sizing: $type;
+  box-sizing: $type;
+}
+
+@mixin font-size($sizeValue: 16) {
+	font-size: ($sizeValue * 10) + px;
+	font-size: ($sizeValue * 0.625) + rem;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-shadow($left: 0px, $top: 0px, $blur: 0px, $color: 0px, $inset: false, $none: false) {
+   @if $none {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  } @else if $inset {
+    -webkit-box-shadow:inset $left $top $blur $color;
+    -moz-box-shadow:inset $left $top $blur $color;
+    box-shadow:inset $left $top $blur $color;
+  } @else {
+    -webkit-box-shadow: $left $top $blur $color;
+    -moz-box-shadow: $left $top $blur $color;
+    box-shadow: $left $top $blur $color;
+  }
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
+@mixin background-cover() {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@mixin columns($count: 3, $gap: 10) {
+  -webkit-column-count: $count;
+  -moz-column-count:    $count;
+  column-count:         $count;
+
+  -webkit-column-gap:   $gap;
+  -moz-column-gap:      $gap;
+  column-gap:           $gap;
+}
+
+@mixin ie7-content($content) {
+}
+
+// Accept one of four values: 0, 1, 2, or 3 which will rotate the element 0, 90, 180 or 270 degrees respectively.
+@mixin rotate($rotate: 180deg) {
+ $MSrotate: 0;
+@if $rotate == 90deg {
+  $MSrotate: 1;
+} @if $rotate == 180deg {
+  $MSrotate: 2;
+} @if $rotate == 270deg {
+  $MSrotate: 3;
+}
+
+-webkit-transform: rotate($rotate);
+-moz-transform: rotate($rotate);
+-ms-transform: rotate($rotate);
+-o-transform: rotate($rotate);
+transform: rotate($rotate);
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$MSrotate});
+}
+
+@mixin rem-fallback($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value*16}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  }
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  }
+}
+
+@mixin kccbutton($btn-color: $primary-color, $direction: right, $is-input: false){
+  @include button($bg: $btn-color, $radius: true, $is-input: true);
+  // @include arrow($direction: right);
+  padding:8px 18px 10px 12px;
+  margin-bottom: 5px;
+  font-size:1.125rem;
+  line-height: normal;
+  &:hover{top: initial;}
+  &:link, &:visited{
+    color:$button-font-color;
+  }
+  @media #{$small-only}{
+    padding:8px 15px 10px;
+    @include grid-column(12);
+    @include font-size(1.8);
+  }
+  @if $is-input == true {
+    padding:8px 15px 10px;
+    border: none;
+    @include box-shadow(0px, -4px, 0px, darken($btn-color, 10%), $inset: true);
+      @media #{$small-only}{
+      padding:12px 15px;
+    }
+  }
+}
+
+@mixin transition-all($duration) {
+  -webkit-transition: all $duration ease-out;
+  -moz-transition: all $duration ease-out;
+  -o-transition: all $duration ease-out;
+  -ms-transition: all $duration ease-out;
+  transition: all $duration ease-out;
+}
+
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin fontawesome($unicode) {
+  &:before {
+    font-family: FontAwesome;
+    content: $unicode;
+  }
+}
+
+@mixin textlink() {
+  color: $teal-for-text;
+  font-weight: $font-weight-semibold;
+  text-decoration: underline;
+  &:hover {
+    color: $teal-darker;
+  }
+}
+
+@mixin word-wrap() {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break:     break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens:    auto;
+  -ms-hyphens:     auto;
+  hyphens:         auto;
+}
+

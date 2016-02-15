@@ -1,0 +1,77 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,p,blockquote,th,td {
+	margin:0;
+	padding:0;
+}
+
+$font-weight-light:													300;
+$font-weight-regular:												400;
+$font-weight-semibold:											600;
+$font-weight-bold:													700;
+
+$para-font-size:														1rem; //20px
+$para-line-height: 													1.5rem; //30px
+$para-margin-top: 													1.5rem;
+$para-margin-bottom: 												1.5rem;
+
+$para-small-font-size:											0.9rem; //18px
+$para-small-line-height: 										1.35rem; //27px
+$para-small-margin-top: 										1.35rem;
+$para-small-margin-bottom: 									1.35rem;
+
+$heading-letter-spacing:										-1px;
+
+$page-heading-one-font-size:								2.5rem; /* 50px/20px(20px is base font size, 50px is chosen size for H1) */
+$page-heading-one-line-height:							3rem; /* 135px/50px(135px is chosen multiple of half the line-height, 50px is chosen size for H1) */
+$page-heading-one-margin-top:								1rem;
+$page-heading-one-margin-bottom:						1.8rem;
+
+$page-heading-one-small-font-size:					2.22rem; /* 40px/18px(18px is base font size, 40px is chosen size for H1) */
+$page-heading-one-small-line-height:				2.7rem; /* 108px/40px(108px is chosen multiple of half the line-height(13.5px), 40px is chosen size for H1) */
+$page-heading-one-small-margin-top:					1rem;
+$page-heading-one-small-margin-bottom:			1.8rem;
+
+$page-heading-two-font-size:								1.8rem; /* 36px/20px(20px is base font size, 36px is chosen size for H2) */
+$page-heading-two-line-height:							2.08rem; /* 75px/36px(75px is chosen multiple of half the line-height, 36px is chosen size for H2) */
+$page-heading-two-margin-top:								2.25rem; //45px
+$page-heading-two-margin-bottom:						1.5rem; //30px
+
+$page-heading-three-font-size:							1.4rem; /* 28px/20px(20px is base font size, 28px is chosen size for H3) */
+$page-heading-three-line-height:						1.6rem; /* 45px/28px(45px is chosen multiple of half the line-height, 28px is chosen size for H3) */
+$page-heading-three-margin-top:							2.25rem; //45px
+$page-heading-three-margin-bottom:					1.5rem; //30px
+
+p {
+	font-size:																$para-font-size;
+	line-height: 															$para-line-height;
+	margin-top: 															$para-margin-top;
+	margin-bottom: 														$para-margin-bottom;
+}
+
+h1, h2, h3 {
+	color: 																		$site-font-color;
+	font-family: 															$site-font-family;
+}
+
+h1 {
+	font-size: 																$page-heading-one-font-size;
+	line-height: 															$page-heading-one-line-height;
+	margin-top: 															$page-heading-one-margin-top;
+	margin-bottom: 														$page-heading-one-margin-bottom;
+	font-weight: 															$font-weight-semibold;
+}
+
+h2 {
+	font-size: 																$page-heading-two-font-size;
+	line-height: 															$page-heading-two-line-height;
+	margin-top: 															$page-heading-two-margin-top;
+	margin-bottom: 														$page-heading-two-margin-bottom;
+	font-weight: 															$font-weight-regular;
+}
+
+h3 {
+	font-size: 																$page-heading-three-font-size;
+	line-height: 															$page-heading-three-line-height;
+	margin-top: 															$page-heading-three-margin-top;
+	margin-bottom: 														$page-heading-three-margin-bottom;
+	font-weight: 															$font-weight-regular;
+}

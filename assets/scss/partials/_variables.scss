@@ -1,0 +1,54 @@
+$row-width: 1430px;
+
+
+// Currently default media queries
+// $small-range: (0em, 40em);
+// $medium-range: (40.063em, 64em);
+// $large-range: (64.063em, 90em);
+// $xlarge-range: (90.063em, 120em);
+// $xxlarge-range: (120.063em, 99999999em);
+
+
+// Our custom media queries, 0-25em is now small, every other media query knocked back a level
+// - result is we've lost the old XXLarge, which we didn't cater to originally
+$small-range: (0em, 25em);
+$medium-range: (25em, 40em);
+$large-range: (40em, 64em);
+$xlarge-range: (64em, 90em);
+$xxlarge-range: (90em, 99999999em);
+
+
+// Brand colours
+$brand-dribbble-color:                              #ea4c89;
+$brand-facebook-color:                              #3b5998;
+$brand-flickr-color:                                #ff0084;
+$brand-googleplus-color:                            #dd4b39;
+$brand-instagram-color:                             #517fa4;
+$brand-linkedin-color:                              #007bb6;
+$brand-pinterest-color:                             #cb2027;
+$brand-tumblr-color:                                #32506d;
+$brand-twitter-color:                               #239dbc;
+$brand-vimeo-color:                                 #1ab7ea;
+$brand-vine-color:                                  #00bf8f;
+$brand-youtube-color:                               #bb0000;
+
+// Typography
+$font-family-proxima-nova:                          Proxima-Nova, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;;
+$font-family-source-sans-pro:                                   'Source Sans Pro', sans-serif, Arial;
+$font-family-bree-serif:                            'Bree Serif', serif;
+$font-family-roboto-condensed:                      'Roboto Condensed', serif;
+$font-family-maven-pro:                             'Maven Pro', sans-serif;
+
+// Z Index
+$z-index-structure-bottom:                          100;
+$z-index-structure-lower:                           150;
+$z-index-structure-middle:                          200;
+$z-index-structure-higher:                          250;
+$z-index-structure-top:                             300;
+
+// Colours
+$charcoal:                                          #F0F0F0;
+
+// Site Colours
+$site-font-color:                                   $charcoal;
+$site-font-family:                                  $font-family-source-sans-pro;

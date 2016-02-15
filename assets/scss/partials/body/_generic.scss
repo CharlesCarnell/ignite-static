@@ -10,6 +10,8 @@ $topbar-breadcrumb-color:                           #A5A5A5;
 $topbar-breadcrumb-font-size:                       16px;
 $topbar-filter-button-color:                        #419FE8;
 $topbar-filter-button-background:                   #FFF;
+$topbar-key-border-top:                             #F2F2F2;
+
 
 #body {
   background: $body-background;
@@ -111,6 +113,7 @@ $topbar-filter-button-background:                   #FFF;
       }
     }
     .key {
+      border-top: 1px solid $topbar-key-border-top;
       ul {
         margin: 0;
         padding: 0;

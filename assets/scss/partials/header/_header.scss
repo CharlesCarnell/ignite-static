@@ -1,7 +1,64 @@
 
 
 
+$header-height:                                     76px;
+$header-background-color:                           #2F9BE7;
+$header-dropdown-border-color:                      #2A8ACE;
+$header-dropdown-title-color:                       #BDDAF2;
+$header-dropdown-title-font-size:                   13px;
+$header-dropdown-value-font-size:                   18px;
+$header-dropdown-value-color:                       #FFF;
+$header-dropdown-chevron-color:                     #96CCF3;
+
 header {
+  .topbar-desktop {
+    @include clearfix;
+    background: $header-background-color;
+    height: $header-height;
+    overflow: hidden;
+    .logo {
+      background: url("../images/ignite_logo.png");
+      width: 90px;
+      height: 38px;
+      margin-top: 20px;
+      margin-left: 23px;
+      float: left;
+    }
+    .dropdown-menus {
+      float: right;
+      .item {
+        display: inline-block;
+        padding: 23px 100px 23px 23px;
+        border-left: 1px solid $header-dropdown-border-color;
+        position: relative;
+        cursor: pointer;
+        .title {
+          color: $header-dropdown-title-color;
+          font-size: $header-dropdown-title-font-size;
+          line-height: 0.8;
+          text-transform: uppercase;
+        }
+        .value {
+          color: $header-dropdown-value-color;
+          font-size: $header-dropdown-value-font-size;
+        }
+        &:after {
+          @include fa-icon();
+          content: $fa-var-chevron-down;
+          color: $header-dropdown-chevron-color;
+          position: absolute;
+          top: 50%;
+          right: 5px;
+          transform: translateY(-50%);
+        }
+        &:hover {
+          &:after {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media #{$small-up} {

@@ -1,7 +1,179 @@
 
 
 
+$sidebar-width:                                     80px;
+$sidebar-expanded-width:                            230px;
+$sidebar-background-color:                          #373942;
+$sidebar-menu-hide-color:                           #747780;
+$sidebar-menu-item-font-size:                       18px;
+$sidebar-menu-item-title-color:                     #B5B7C3;
+$sidebar-menu-item-icon-color:                      #FFF;
+$sidebar-menu-item-expand-color:                    #B7B8BB;
+$sidebar-menu-item-border-top-color:                #4C4D5B;
+
 #sidebar {
+  background: $sidebar-background-color;
+  display: inline-block;
+  width: $sidebar-width;
+  height: 100%;
+  float: left;
+  &.expanded {
+    width: $sidebar-expanded-width;
+  }
+  .inner {
+    .menu {
+      > .hide {
+        color: $sidebar-menu-hide-color;
+        position: relative;
+        span {
+
+        }
+        &:after {
+          @include fa-icon();
+          content: $fa-var-chevron-down;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+        }
+      }
+      > ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        > li {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          border-top: 1px solid $sidebar-menu-item-border-top-color;
+          &:last-child {
+            border-bottom: 1px solid $sidebar-menu-item-border-top-color;
+          }
+          &.has-children {
+            > a {
+              &:after {
+                @include fa-icon();
+                content: $fa-var-chevron-down;
+                color: $sidebar-menu-item-expand-color;
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                transform: translateY(-50%);
+              }
+            }
+          }
+          > a {
+            color: $sidebar-menu-item-title-color;
+            display: block;
+            height: 68px;
+            width: 100%;
+            position: relative;
+            > span {
+              font-size: $sidebar-menu-item-font-size;
+              text-transform: uppercase;
+              position: absolute;
+              top: 50%;
+              left: 50px;
+              transform: translateY(-50%);
+            }
+            &:before {
+              @include fa-icon();
+              content: $fa-var-chevron-down;
+              color: $sidebar-menu-item-icon-color;
+              position: absolute;
+              top: 50%;
+              left: 22px;
+              transform: translateY(-50%);
+            }
+          }
+          ul.second {
+            display: none;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            > li {
+              margin: 0;
+              padding: 0;
+              list-style: none;
+              > a {
+                color: $sidebar-menu-item-title-color;
+                display: block;
+                > span {
+                  font-size: $sidebar-menu-item-font-size;
+                  text-transform: uppercase;
+                  position: absolute;
+                  top: 50%;
+                  left: 50px;
+                  transform: translateY(-50%);
+                }
+                &:after {
+                  @include fa-icon();
+                  content: $fa-var-chevron-down;
+                  color: $sidebar-menu-item-icon-color;
+                  position: absolute;
+                  top: 50%;
+                  left: 21px;
+                  transform: translateY(-50%);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#sidebar {
+  .inner {
+    .menu {
+      > ul {
+        > li {
+          &.dashboard {
+            > a {
+              &:before {
+                content: $fa-var-globe;
+              }
+            }
+          }
+          &.plan {
+            > a {
+              &:before {
+                content: $fa-var-tachometer;
+              }
+            }
+          }
+          &.kpis {
+            > a {
+              &:before {
+                content: $fa-var-area-chart;
+              }
+            }
+          }
+          &.reports {
+            > a {
+              &:before {
+                content: $fa-var-users;
+              }
+            }
+          }
+          &.resources {
+            > a {
+              &:before {
+                content: $fa-var-briefcase;
+              }
+            }
+          }
+          &.admin {
+            > a {
+              &:before {
+                content: $fa-var-cog;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media #{$small-up} {

@@ -1,10 +1,11 @@
 
 
 
-$body-background:															 $white;
-
+$body-background:															      $white;
 
 #body {
+  background: $body-background;
+  display: inline-block;
 }
 
 @media #{$small-up} {

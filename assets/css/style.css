@@ -7182,5 +7182,130 @@ a.skip-main:focus, a.skip-main:active {
       font-size: 30px;
       line-height: 2.08rem;
       margin: 30px 0px 20px 0px; } }
+#body {
+  background: #FFFFFF;
+  display: inline-block; }
+
+#sidebar {
+  background: #373942;
+  display: inline-block;
+  width: 80px;
+  height: 100%;
+  float: left; }
+  #sidebar.expanded {
+    width: 230px; }
+  #sidebar .inner .menu > .hide {
+    color: #747780;
+    position: relative; }
+    #sidebar .inner .menu > .hide:after {
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0);
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px; }
+  #sidebar .inner .menu > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    #sidebar .inner .menu > ul > li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid #4C4D5B; }
+      #sidebar .inner .menu > ul > li:last-child {
+        border-bottom: 1px solid #4C4D5B; }
+      #sidebar .inner .menu > ul > li.has-children > a:after {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transform: translate(0, 0);
+        content: "";
+        color: #B7B8BB;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%); }
+      #sidebar .inner .menu > ul > li > a {
+        color: #B5B7C3;
+        display: block;
+        height: 68px;
+        width: 100%;
+        position: relative; }
+        #sidebar .inner .menu > ul > li > a > span {
+          font-size: 18px;
+          text-transform: uppercase;
+          position: absolute;
+          top: 50%;
+          left: 50px;
+          transform: translateY(-50%); }
+        #sidebar .inner .menu > ul > li > a:before {
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          transform: translate(0, 0);
+          content: "";
+          color: #FFF;
+          position: absolute;
+          top: 50%;
+          left: 22px;
+          transform: translateY(-50%); }
+      #sidebar .inner .menu > ul > li ul.second {
+        display: none;
+        margin: 0;
+        padding: 0;
+        list-style: none; }
+        #sidebar .inner .menu > ul > li ul.second > li {
+          margin: 0;
+          padding: 0;
+          list-style: none; }
+          #sidebar .inner .menu > ul > li ul.second > li > a {
+            color: #B5B7C3;
+            display: block; }
+            #sidebar .inner .menu > ul > li ul.second > li > a > span {
+              font-size: 18px;
+              text-transform: uppercase;
+              position: absolute;
+              top: 50%;
+              left: 50px;
+              transform: translateY(-50%); }
+            #sidebar .inner .menu > ul > li ul.second > li > a:after {
+              display: inline-block;
+              font: normal normal normal 14px/1 FontAwesome;
+              font-size: inherit;
+              text-rendering: auto;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+              transform: translate(0, 0);
+              content: "";
+              color: #FFF;
+              position: absolute;
+              top: 50%;
+              left: 21px;
+              transform: translateY(-50%); }
+
+#sidebar .inner .menu > ul > li.dashboard > a:before {
+  content: ""; }
+#sidebar .inner .menu > ul > li.plan > a:before {
+  content: ""; }
+#sidebar .inner .menu > ul > li.kpis > a:before {
+  content: ""; }
+#sidebar .inner .menu > ul > li.reports > a:before {
+  content: ""; }
+#sidebar .inner .menu > ul > li.resources > a:before {
+  content: ""; }
+#sidebar .inner .menu > ul > li.admin > a:before {
+  content: ""; }
 
 /*# sourceMappingURL=style.css.map */

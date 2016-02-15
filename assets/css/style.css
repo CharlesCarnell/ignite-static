@@ -7358,8 +7358,41 @@ a.skip-main:focus, a.skip-main:active {
     #body .inner .topbar .filters {
       position: absolute;
       top: 50%;
-      right: 12px;
+      right: 130px;
       transform: translateY(-50%); }
+      #body .inner .topbar .filters .buttons a {
+        color: #419FE8; }
+        #body .inner .topbar .filters .buttons a .button {
+          background: #FFF;
+          width: 117px;
+          height: 42px;
+          border: 1px solid #419FE8;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%); }
+          #body .inner .topbar .filters .buttons a .button span {
+            color: #419FE8;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: absolute;
+            top: 50%;
+            left: 17px;
+            transform: translateY(-50%); }
+          #body .inner .topbar .filters .buttons a .button:after {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transform: translate(0, 0);
+            content: "";
+            color: #419FE8;
+            text-transform: uppercase;
+            position: absolute;
+            top: 50%;
+            right: 18px;
+            transform: translateY(-50%); }
   #body .inner .key ul {
     margin: 0;
     padding: 0;

@@ -8,6 +8,8 @@ $topbar-title-color:                                #2F9BE7;
 $topbar-title-font-size:                            24px;
 $topbar-breadcrumb-color:                           #A5A5A5;
 $topbar-breadcrumb-font-size:                       16px;
+$topbar-filter-button-color:                        #419FE8;
+$topbar-filter-button-background:                   #FFF;
 
 #body {
   background: $body-background;
@@ -70,8 +72,41 @@ $topbar-breadcrumb-font-size:                       16px;
       .filters {
         position: absolute;
         top: 50%;
-        right: 12px;
+        right: 130px;
         transform: translateY(-50%);
+        .buttons {
+          a {
+            color: $topbar-filter-button-color;
+            .button {
+              background: $topbar-filter-button-background;
+              width: 117px;
+              height: 42px;
+              border: 1px solid $topbar-filter-button-color;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              span {
+                color: $topbar-filter-button-color;
+                font-weight: bold;
+                text-transform: uppercase;
+                position: absolute;
+                top: 50%;
+                left: 17px;
+                transform: translateY(-50%);
+              }
+              &:after {
+                @include fa-icon();
+                content: $fa-var-filter;
+                color: $topbar-filter-button-color;
+                text-transform: uppercase;
+                position: absolute;
+                top: 50%;
+                right: 18px;
+                transform: translateY(-50%);
+              }
+            }
+          }
+        }
       }
     }
     .key {

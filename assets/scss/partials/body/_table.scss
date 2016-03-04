@@ -3,8 +3,23 @@
 
 $table-background:                                  $body-background;
 $table-border:                                      #DCDCDC;
+$table-head-color:                                  #9B9292;
+$table-head-font-size:                              13px;
+$table-body-color:                                  #262626;
+$table-body-first-row-font-size:                    13px;
+$table-body-first-column-color:                     #7A7A7A;
+$table-body-first-column-font-size:                 15px;
+$table-body-first-column-width:                     359px;
+$table-body-info-font-size:                         17px;
+$table-body-bubble-font-size:                       15px;
+$table-body-bubble-state-disabled-background:       #DCDCDC;
+$table-body-bubble-default-color:                   $white;
+$table-body-bubble-state-success-background:        #0BC189;
+$table-body-bubble-state-warning-background:        #F5C622;
+$table-body-bubble-state-alert-background:          #ED573C;
 
 .dashboard-view-table {
+  margin-left: 15px;
   table {
     width: 100%;
     border: 1px solid $table-border;
@@ -12,6 +27,8 @@ $table-border:                                      #DCDCDC;
     thead {
       tr {
         th {
+          color: $table-head-color;
+          font-size: $table-head-font-size;
           padding: 15px;
           position: relative;
           border: 1px solid $table-border;
@@ -64,10 +81,63 @@ $table-border:                                      #DCDCDC;
       tr {
         background: $table-background;
         td {
+          color: $table-body-color;
+          text-align: center;
+          position: relative;
           border: 1px solid $table-border;
+          span.info {
+            cursor: pointer;
+            &:before {
+              @include fa-icon();
+              content: $fa-var-info;
+              font-size: $table-body-info-font-size;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+          span.bubble {
+            color: $table-body-bubble-default-color;
+            font-size: $table-body-bubble-font-size;
+            display: block;
+            padding: 6px 0px;
+            border-radius: 3px;
+            &.state-disabled {
+              background-color: $table-body-bubble-state-disabled-background;
+            }
+            &.state-success {
+              background-color: $table-body-bubble-state-success-background;
+            }
+            &.state-warning {
+              background-color: $table-body-bubble-state-warning-background;
+            }
+            &.state-alert {
+              background-color: $table-body-bubble-state-alert-background;
+            }
+          }
+          &:first-child {
+            color: $table-body-first-column-color;
+            font-size: $table-body-first-column-font-size;
+            text-align: left;
+            width: $table-body-first-column-width;
+            padding: 18px 18px;
+          }
         }
-        &:first-child {
+        &.heading {
           background: $white;
+          td {
+            font-size: $table-body-first-row-font-size;
+            text-transform: uppercase;
+            &:first-child {
+              font-size: 18px;
+              font-weight: bold;
+              text-transform: none;
+              width: $table-body-first-column-width;
+              padding-top: 5px;
+              padding-bottom: 5px;
+            }
+          }
         }
       }
     }

@@ -2,6 +2,7 @@ var functions = {
   init: function(){
     $(document).foundation();
     this.webfonts();
+    this.info.init();
   },
 
   windowLoad: function(){
@@ -67,6 +68,104 @@ var functions = {
       setTimeout(function(){
         head.removeChild(style);
       }, 0);
+    }
+  },
+
+  info: {
+    init: function(){
+      if( $('[data-info-text]').length ){
+        this.info();
+      }
+    },
+    info: function(){
+      this.createTooltipDiv();
+      this.attachEvents();
+    },
+    createTooltipDiv: function(){
+      $('body').append('<div id="infoTooltip"><div class="inner"></div></div>');
+    },
+    attachEvents: function(){
+      for (var i = 0; i < $('[data-info-text]').length; i++) {
+        $( $('[data-info-text]')[i] ).on('mouseenter', this.onMouseEnter.bind(this));
+        $( $('[data-info-text]')[i] ).on('mouseleave', this.onMouseLeave.bind(this));
+        $( $('[data-info-text]')[i] ).on('click', this.onClick.bind(this));
+      }
+    },
+    onMouseEnter: function(e){
+      var element = $( $(e.currentTarget)[0] );
+      var elementCoords = this.getElementCoords(element[0]);
+      var x = elementCoords.left + (( $(element).parent().width() / 3) * 2);
+      var y = elementCoords.top  - (( $(element).parent().height() / 3) * 2);
+      this.positionTooltip(x, y);
+      this.populateTooltip( $(element).data('info-text')  );
+      this.removeClickClass();
+      this.showTooltip();
+      this.resetTimer();
+    },
+    onMouseLeave: function(e){
+      var element = $( $(e.currentTarget)[0] );
+      if( !$('#infoTooltip').hasClass('clicked') ){
+        this.startTimer();
+      }
+    },
+    onClick: function(e){
+      if( $('#infoTooltip').hasClass('show') ){
+        this.hideTooltip();
+        this.removeClickClass();
+      } else {
+        var element = $( $(e.currentTarget)[0] );
+        var elementCoords = this.getElementCoords(element[0])
+        var x = elementCoords.left + (( $(element).parent().width() / 3) * 2);
+        var y = elementCoords.top  - (( $(element).parent().height() / 3) * 2);
+        this.positionTooltip(x, y);
+        this.populateTooltip( $(element).data('info-text')  );
+        this.addClickClass();
+        this.showTooltip();
+      }
+    },
+    positionTooltip: function(x, y){
+      $('#infoTooltip')
+        .css('top', y)
+        .css('left', x);
+    },
+    showTooltip: function(){
+      $('#infoTooltip').removeClass('hide');
+      $('#infoTooltip').addClass('show');
+    },
+    hideTooltip: function(){
+      $('#infoTooltip').removeClass('show');
+      $('#infoTooltip').addClass('hide');
+    },
+    populateTooltip: function(value){
+      $('#infoTooltip .inner').html(value);
+    },
+    startTimer: function(){
+      var hideTooltip = this.hideTooltip.bind(this);
+      this.interval = setInterval(function(){
+        hideTooltip();
+      }, 300);
+    },
+    resetTimer: function(){
+      clearInterval(this.interval);
+    },
+    addClickClass: function(){
+      $('#infoTooltip').addClass('clicked');
+    },
+    removeClickClass: function(){
+      $('#infoTooltip').removeClass('clicked');
+    },
+    getElementCoords: function(elem){
+      var box = elem.getBoundingClientRect();
+      var body = document.body;
+      var docEl = document.documentElement;
+      var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
+      var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
+      var clientTop = docEl.clientTop || body.clientTop || 0;
+      var clientLeft = docEl.clientLeft || body.clientLeft || 0;
+      var top  = box.top +  scrollTop - clientTop;
+      var left = box.left + scrollLeft - clientLeft;
+
+      return { top: Math.round(top), left: Math.round(left) };
     }
   }
 

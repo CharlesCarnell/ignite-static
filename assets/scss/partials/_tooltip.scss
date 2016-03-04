@@ -1,0 +1,23 @@
+
+
+
+#infoTooltip {
+  background: $white;
+  display: none;
+  padding: 8px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 1px solid #D8D8D8;
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.24);
+  .inner {
+    p {
+      font-size: 12px;
+      line-height: 1rem;
+      margin: 0;
+    }
+  }
+  &.show {
+    display: block;
+  }
+}

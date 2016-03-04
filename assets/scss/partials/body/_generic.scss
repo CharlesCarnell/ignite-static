@@ -10,6 +10,7 @@ $topbar-breadcrumb-color:                           #A5A5A5;
 $topbar-breadcrumb-font-size:                       16px;
 $topbar-filter-button-color:                        #419FE8;
 $topbar-filter-button-background:                   #FFF;
+$key-status-font-size:                              14px;
 $key-status-at-target-background:                   #2EA998;
 $key-status-not-at-target-recognised-background:    #D8C171;
 $key-status-not-at-target-critical-background:      #D97563;
@@ -123,6 +124,7 @@ $key-status-not-applicable-background:              #929292;
         padding: 0;
         list-style: none;
         li {
+          font-size: $key-status-font-size;
           display: inline-block;
           margin: 0;
           padding: 0;

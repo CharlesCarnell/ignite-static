@@ -1,0 +1,92 @@
+
+
+
+$table-background:                                  $body-background;
+$table-border:                                      #DCDCDC;
+
+.dashboard-view-table {
+  table {
+    width: 100%;
+    border: 1px solid $table-border;
+    border-collapse: collapse;
+    thead {
+      tr {
+        th {
+          padding: 15px;
+          position: relative;
+          border: 1px solid $table-border;
+          > div {
+            span.displayBlock {
+              display: block;
+            }
+            &.icon {
+              padding-left: 40px;
+              &:before {
+                content: ' ';
+                width: 32px;
+                height: 32px;
+                position: absolute;
+                top: 50%;
+                left: 15px;
+                transform: translateY(-50%);
+              }
+              &.icon-global {
+                &:before {
+                  background: url('../images/flag_global.png') no-repeat;
+                }
+              }
+              &.icon-gb {
+                &:before {
+                  background: url('../images/flag_gb.png') no-repeat;
+                }
+              }
+              &.icon-fr {
+                &:before {
+                  background: url('../images/flag_fr.png') no-repeat;
+                }
+              }
+              &.icon-de {
+                &:before {
+                  background: url('../images/flag_de.png') no-repeat;
+                }
+              }
+              &.icon-hr {
+                &:before {
+                  background: url('../images/flag_it.png') no-repeat;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        background: $table-background;
+        td {
+          border: 1px solid $table-border;
+        }
+        &:first-child {
+          background: $white;
+        }
+      }
+    }
+  }
+}
+
+@media #{$small-up} {
+}
+@media #{$medium-up} {
+}
+@media #{$large-up} {
+}
+@media #{$large-only} {
+}
+@media #{$xlarge-up} {
+}
+@media #{$xlarge-only} {
+}
+@media #{$xxlarge-up} {
+}
+@media #{$xxlarge-only} {
+}

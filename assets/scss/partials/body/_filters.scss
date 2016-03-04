@@ -1,0 +1,63 @@
+
+
+
+$topbar-filter-button-color:                        #419FE8;
+$topbar-filter-button-background:                   #FFF;
+
+.filters {
+  position: absolute;
+  top: 50%;
+  right: 130px;
+  transform: translateY(-50%);
+  .buttons {
+    a {
+      color: $topbar-filter-button-color;
+      .button {
+        background: $topbar-filter-button-background;
+        width: 117px;
+        height: 42px;
+        border: 1px solid $topbar-filter-button-color;
+        border-radius: 3px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        span {
+          color: $topbar-filter-button-color;
+          font-weight: bold;
+          text-transform: uppercase;
+          position: absolute;
+          top: 50%;
+          left: 17px;
+          transform: translateY(-50%);
+        }
+        &:after {
+          @include fa-icon();
+          content: $fa-var-filter;
+          color: $topbar-filter-button-color;
+          text-transform: uppercase;
+          position: absolute;
+          top: 50%;
+          right: 18px;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
+
+@media #{$small-up} {
+}
+@media #{$medium-up} {
+}
+@media #{$large-up} {
+}
+@media #{$large-only} {
+}
+@media #{$xlarge-up} {
+}
+@media #{$xlarge-only} {
+}
+@media #{$xxlarge-up} {
+}
+@media #{$xxlarge-only} {
+}

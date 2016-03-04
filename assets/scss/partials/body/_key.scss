@@ -1,0 +1,86 @@
+
+
+
+$key-status-font-size:                              14px;
+$key-status-at-target-background:                   #2EA998;
+$key-status-not-at-target-recognised-background:    #D8C171;
+$key-status-not-at-target-critical-background:      #D97563;
+$key-status-not-started-background:                 #CCC;
+$key-status-not-applicable-background:              #929292;
+
+.key {
+  margin: 50px 0px 0px 0px;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      font-size: $key-status-font-size;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      margin-left: 18px;
+      padding-left: 18px;
+      list-style: none;
+      &:before {
+        content: ' ';
+        position: absolute;
+        background: orange;
+        width: 10px;
+        height: 10px;
+        top: 50%;
+        left: 0px;
+        border-radius: 10px;
+        transform: translateY(-50%);
+      }
+      &.at-target {
+        &:before {
+          background-color: $key-status-at-target-background;
+        }
+      }
+      &.not-at-target-recognised {
+        &:before {
+          background-color: $key-status-not-at-target-recognised-background;
+        }
+      }
+      &.not-at-target-critical {
+        &:before {
+          background-color: $key-status-not-at-target-critical-background;
+        }
+      }
+      &.not-started {
+        &:before {
+          background-color: $key-status-not-started-background;
+        }
+      }
+      &.not-applicable {
+        &:before {
+          background-color: $key-status-not-applicable-background;
+        }
+      }
+      &:first-child {
+        &:before {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media #{$small-up} {
+}
+@media #{$medium-up} {
+}
+@media #{$large-up} {
+}
+@media #{$large-only} {
+}
+@media #{$xlarge-up} {
+}
+@media #{$xlarge-only} {
+}
+@media #{$xxlarge-up} {
+}
+@media #{$xxlarge-only} {
+}

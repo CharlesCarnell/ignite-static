@@ -9,7 +9,7 @@ $key-status-not-started-background:                 #CCC;
 $key-status-not-applicable-background:              #929292;
 
 .key {
-  margin: 50px 0px 0px 0px;
+  margin: 50px 0px 40px 15px;
   ul {
     margin: 0;
     padding: 0;
@@ -60,9 +60,7 @@ $key-status-not-applicable-background:              #929292;
         }
       }
       &:first-child {
-        &:before {
-          margin-left: 0;
-        }
+        margin-left: 0;
       }
     }
   }

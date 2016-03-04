@@ -10,7 +10,11 @@ $topbar-breadcrumb-color:                           #A5A5A5;
 $topbar-breadcrumb-font-size:                       16px;
 $topbar-filter-button-color:                        #419FE8;
 $topbar-filter-button-background:                   #FFF;
-$topbar-key-border-top:                             #F2F2F2;
+$key-status-at-target-background:                   #2EA998;
+$key-status-not-at-target-recognised-background:    #D8C171;
+$key-status-not-at-target-critical-background:      #D97563;
+$key-status-not-started-background:                 #CCC;
+$key-status-not-applicable-background:              #929292;
 
 
 #body {
@@ -113,7 +117,7 @@ $topbar-key-border-top:                             #F2F2F2;
       }
     }
     .key {
-      border-top: 1px solid $topbar-key-border-top;
+      margin: 60px 0px 0px 30px;
       ul {
         margin: 0;
         padding: 0;
@@ -122,24 +126,50 @@ $topbar-key-border-top:                             #F2F2F2;
           display: inline-block;
           margin: 0;
           padding: 0;
+          position: relative;
+          margin-left: 18px;
+          padding-left: 18px;
           list-style: none;
-          &:after {
-
+          &:before {
+            content: ' ';
+            position: absolute;
+            background: orange;
+            width: 10px;
+            height: 10px;
+            top: 50%;
+            left: 0px;
+            border-radius: 10px;
+            transform: translateY(-50%);
           }
           &.at-target {
-
+            &:before {
+              background-color: $key-status-at-target-background;
+            }
           }
           &.not-at-target-recognised {
-
+            &:before {
+              background-color: $key-status-not-at-target-recognised-background;
+            }
           }
           &.not-at-target-critical {
-
+            &:before {
+              background-color: $key-status-not-at-target-critical-background;
+            }
           }
           &.not-started {
-
+            &:before {
+              background-color: $key-status-not-started-background;
+            }
           }
           &.not-applicable {
-
+            &:before {
+              background-color: $key-status-not-applicable-background;
+            }
+          }
+          &:first-child {
+            &:before {
+              margin-left: 0;
+            }
           }
         }
       }

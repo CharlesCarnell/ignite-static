@@ -7410,7 +7410,7 @@ a.skip-main:focus, a.skip-main:active {
         transform: translateY(-50%); }
 
 .key {
-  margin: 50px 0px 0px 0px; }
+  margin: 50px 0px 40px 15px; }
   .key ul {
     margin: 0;
     padding: 0;
@@ -7444,44 +7444,97 @@ a.skip-main:focus, a.skip-main:active {
         background-color: #CCC; }
       .key ul li.not-applicable:before {
         background-color: #929292; }
-      .key ul li:first-child:before {
+      .key ul li:first-child {
         margin-left: 0; }
 
-.dashboard-view-table table {
-  width: 100%;
-  border: 1px solid #DCDCDC;
-  border-collapse: collapse; }
-  .dashboard-view-table table thead tr th {
-    padding: 15px;
-    position: relative;
-    border: 1px solid #DCDCDC; }
-    .dashboard-view-table table thead tr th > div span.displayBlock {
-      display: block; }
-    .dashboard-view-table table thead tr th > div.icon {
-      padding-left: 40px; }
-      .dashboard-view-table table thead tr th > div.icon:before {
-        content: ' ';
-        width: 32px;
-        height: 32px;
-        position: absolute;
-        top: 50%;
-        left: 15px;
-        transform: translateY(-50%); }
-      .dashboard-view-table table thead tr th > div.icon.icon-global:before {
-        background: url("../images/flag_global.png") no-repeat; }
-      .dashboard-view-table table thead tr th > div.icon.icon-gb:before {
-        background: url("../images/flag_gb.png") no-repeat; }
-      .dashboard-view-table table thead tr th > div.icon.icon-fr:before {
-        background: url("../images/flag_fr.png") no-repeat; }
-      .dashboard-view-table table thead tr th > div.icon.icon-de:before {
-        background: url("../images/flag_de.png") no-repeat; }
-      .dashboard-view-table table thead tr th > div.icon.icon-hr:before {
-        background: url("../images/flag_it.png") no-repeat; }
-  .dashboard-view-table table tbody tr {
-    background: #F9F9F9; }
-    .dashboard-view-table table tbody tr td {
+.dashboard-view-table {
+  margin-left: 15px; }
+  .dashboard-view-table table {
+    width: 100%;
+    border: 1px solid #DCDCDC;
+    border-collapse: collapse; }
+    .dashboard-view-table table thead tr th {
+      color: #9B9292;
+      font-size: 13px;
+      padding: 15px;
+      position: relative;
       border: 1px solid #DCDCDC; }
-    .dashboard-view-table table tbody tr:first-child {
-      background: #FFFFFF; }
+      .dashboard-view-table table thead tr th > div span.displayBlock {
+        display: block; }
+      .dashboard-view-table table thead tr th > div.icon {
+        padding-left: 40px; }
+        .dashboard-view-table table thead tr th > div.icon:before {
+          content: ' ';
+          width: 32px;
+          height: 32px;
+          position: absolute;
+          top: 50%;
+          left: 15px;
+          transform: translateY(-50%); }
+        .dashboard-view-table table thead tr th > div.icon.icon-global:before {
+          background: url("../images/flag_global.png") no-repeat; }
+        .dashboard-view-table table thead tr th > div.icon.icon-gb:before {
+          background: url("../images/flag_gb.png") no-repeat; }
+        .dashboard-view-table table thead tr th > div.icon.icon-fr:before {
+          background: url("../images/flag_fr.png") no-repeat; }
+        .dashboard-view-table table thead tr th > div.icon.icon-de:before {
+          background: url("../images/flag_de.png") no-repeat; }
+        .dashboard-view-table table thead tr th > div.icon.icon-hr:before {
+          background: url("../images/flag_it.png") no-repeat; }
+    .dashboard-view-table table tbody tr {
+      background: #F9F9F9; }
+      .dashboard-view-table table tbody tr td {
+        color: #262626;
+        text-align: center;
+        position: relative;
+        border: 1px solid #DCDCDC; }
+        .dashboard-view-table table tbody tr td span.info {
+          cursor: pointer; }
+          .dashboard-view-table table tbody tr td span.info:before {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transform: translate(0, 0);
+            content: "";
+            font-size: 17px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); }
+        .dashboard-view-table table tbody tr td span.bubble {
+          color: #FFFFFF;
+          font-size: 15px;
+          display: block;
+          padding: 6px 0px;
+          border-radius: 3px; }
+          .dashboard-view-table table tbody tr td span.bubble.state-disabled {
+            background-color: #DCDCDC; }
+          .dashboard-view-table table tbody tr td span.bubble.state-success {
+            background-color: #0BC189; }
+          .dashboard-view-table table tbody tr td span.bubble.state-warning {
+            background-color: #F5C622; }
+          .dashboard-view-table table tbody tr td span.bubble.state-alert {
+            background-color: #ED573C; }
+        .dashboard-view-table table tbody tr td:first-child {
+          color: #7A7A7A;
+          font-size: 15px;
+          text-align: left;
+          width: 359px;
+          padding: 18px 18px; }
+      .dashboard-view-table table tbody tr.heading {
+        background: #FFFFFF; }
+        .dashboard-view-table table tbody tr.heading td {
+          font-size: 13px;
+          text-transform: uppercase; }
+          .dashboard-view-table table tbody tr.heading td:first-child {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: none;
+            width: 359px;
+            padding-top: 5px;
+            padding-bottom: 5px; }
 
 /*# sourceMappingURL=style.css.map */

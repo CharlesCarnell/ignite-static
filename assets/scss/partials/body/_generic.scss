@@ -1,8 +1,9 @@
 
 
 
-$body-background:															      $white;
+$body-background:															      #F9F9F9;
 $topbar-height:                                     70px;
+$topbar-background:                                 #FEFEFE;
 $topbar-topbar-border-bottom:                       #EDEDED;
 $topbar-title-color:                                #2F9BE7;
 $topbar-title-font-size:                            24px;
@@ -22,8 +23,10 @@ $key-status-not-applicable-background:              #929292;
   background: $body-background;
   display: inline-block;
   width: calc(100% - #{$sidebar-expanded-width});
+  height: 100%;
   .inner {
     .topbar {
+      background: $topbar-background;
       height: $topbar-height;
       border-bottom: 1px solid $topbar-topbar-border-bottom;
       position: relative;

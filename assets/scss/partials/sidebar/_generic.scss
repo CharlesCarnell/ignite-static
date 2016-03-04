@@ -5,6 +5,8 @@ $sidebar-width:                                     80px;
 $sidebar-expanded-width:                            230px;
 $sidebar-background-color:                          #373942;
 $sidebar-menu-hide-color:                           #747780;
+$sidebar-menu-hide-font-size:                       18px;
+$sidebar-menu-hide-arrow-font-size:                 13px;
 $sidebar-menu-item-font-size:                       18px;
 $sidebar-menu-item-title-color:                     #B5B7C3;
 $sidebar-menu-item-icon-color:                      #FFF;
@@ -22,18 +24,25 @@ $sidebar-menu-item-border-top-color:                #4C4D5B;
   }
   .inner {
     .menu {
-      > .hide {
+      > .hide-toggle {
         color: $sidebar-menu-hide-color;
+        font-size: $sidebar-menu-hide-font-size;
+        height: 70px;
         position: relative;
+        cursor: pointer;
         span {
-
+          text-transform: uppercase;
+          position: absolute;
+          bottom: 10px;
+          left: 25px;
         }
         &:after {
           @include fa-icon();
-          content: $fa-var-chevron-down;
+          content: $fa-var-chevron-left;
+          font-size: $sidebar-menu-hide-arrow-font-size;
           position: absolute;
-          top: 0px;
-          left: 0px;
+          bottom: 16px;
+          left: 10px;
         }
       }
       > ul {

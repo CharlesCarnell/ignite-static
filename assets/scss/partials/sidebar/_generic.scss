@@ -11,6 +11,7 @@ $sidebar-menu-item-font-size:                       18px;
 $sidebar-menu-item-title-color:                     #B5B7C3;
 $sidebar-menu-item-icon-color:                      #FFF;
 $sidebar-menu-item-expand-color:                    #B7B8BB;
+$sidebar-menu-item-expand-font-size:                10px;
 $sidebar-menu-item-border-top-color:                #4C4D5B;
 
 #sidebar {
@@ -63,6 +64,7 @@ $sidebar-menu-item-border-top-color:                #4C4D5B;
                 @include fa-icon();
                 content: $fa-var-chevron-down;
                 color: $sidebar-menu-item-expand-color;
+                font-size: $sidebar-menu-item-expand-font-size;
                 position: absolute;
                 top: 50%;
                 right: 20px;

@@ -3,6 +3,7 @@ var functions = {
     $(document).foundation();
     this.webfonts();
     this.info.init();
+    this.toggleSidebar.init();
   },
 
   windowLoad: function(){
@@ -166,6 +167,34 @@ var functions = {
       var left = box.left + scrollLeft - clientLeft;
 
       return { top: Math.round(top), left: Math.round(left) };
+    }
+  },
+
+  toggleSidebar: {
+    init: function(){
+      if( $('#sidebar .inner .menu .hide-toggle').length ){
+        this.toggleSidebar();
+      }
+    },
+    toggleSidebar: function(){
+      this.attachEvents();
+    },
+    attachEvents: function(){
+      $('#sidebar .inner .menu .hide-toggle').on('click', this.click.bind(this));
+    },
+    click: function(e){
+      var element = $( $(e.currentTarget)[0] );
+      if( $('#sidebar').hasClass('expanded') ){
+        this.close();
+      } else {
+        this.open();
+      }
+    },
+    open: function(){
+      $('#sidebar').addClass('expanded');
+    },
+    close: function(){
+      $('#sidebar').removeClass('expanded');
     }
   }
 

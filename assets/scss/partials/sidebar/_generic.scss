@@ -39,10 +39,10 @@ $sidebar-menu-item-border-top-color:                #4C4D5B;
           left: 50%;
           visibility: hidden;
           opacity: 0;
-          -webkit-transition: all 500ms ease;
-          -moz-transition: all 500ms ease;
-          -o-transition: all 500ms ease;
-          transition: all 500ms ease;
+          -webkit-transition: all 200ms ease;
+          -moz-transition: all 200ms ease;
+          -o-transition: all 200ms ease;
+          transition: all 200ms ease;
         }
         &:after {
           @include fa-icon();
@@ -50,7 +50,8 @@ $sidebar-menu-item-border-top-color:                #4C4D5B;
           font-size: $sidebar-menu-hide-arrow-font-size;
           position: absolute;
           bottom: 16px;
-          left: 10px;
+          left: 50%;
+          transform: translateX(-50%);
         }
       }
       > ul {
@@ -158,12 +159,13 @@ $sidebar-menu-item-border-top-color:                #4C4D5B;
         > .hide-toggle {
           span {
             left: 25px;
-            transform: translateX(0);
             visibility: visible;
             opacity: 1;
           }
           &:after {
             content: $fa-var-chevron-left;
+            left: 10px;
+            transform: translateX(0%);
           }
         }
         > ul {

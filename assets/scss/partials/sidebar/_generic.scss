@@ -20,9 +20,10 @@ $sidebar-menu-item-border-top-color:                #4C4D5B;
   width: $sidebar-width;
   height: 100%;
   float: left;
-  &.expanded {
-    width: $sidebar-expanded-width;
-  }
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
   .inner {
     .menu {
       > .hide-toggle {
@@ -35,11 +36,17 @@ $sidebar-menu-item-border-top-color:                #4C4D5B;
           text-transform: uppercase;
           position: absolute;
           bottom: 10px;
-          left: 25px;
+          left: 50%;
+          visibility: hidden;
+          opacity: 0;
+          -webkit-transition: all 500ms ease;
+          -moz-transition: all 500ms ease;
+          -o-transition: all 500ms ease;
+          transition: all 500ms ease;
         }
         &:after {
           @include fa-icon();
-          content: $fa-var-chevron-left;
+          content: $fa-var-chevron-right;
           font-size: $sidebar-menu-hide-arrow-font-size;
           position: absolute;
           bottom: 16px;
@@ -85,6 +92,12 @@ $sidebar-menu-item-border-top-color:                #4C4D5B;
               top: 50%;
               left: 50px;
               transform: translateY(-50%);
+              visibility: hidden;
+              opacity: 0;
+              -webkit-transition: all 500ms ease;
+              -moz-transition: all 500ms ease;
+              -o-transition: all 500ms ease;
+              transition: all 500ms ease;
             }
             &:before {
               @include fa-icon();
@@ -115,6 +128,12 @@ $sidebar-menu-item-border-top-color:                #4C4D5B;
                   top: 50%;
                   left: 50px;
                   transform: translateY(-50%);
+                  visibility: hidden;
+                  opacity: 0;
+                  -webkit-transition: all 500ms ease;
+                  -moz-transition: all 500ms ease;
+                  -o-transition: all 500ms ease;
+                  transition: all 500ms ease;
                 }
                 &:after {
                   @include fa-icon();
@@ -124,6 +143,44 @@ $sidebar-menu-item-border-top-color:                #4C4D5B;
                   top: 50%;
                   left: 21px;
                   transform: translateY(-50%);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.expanded {
+    width: $sidebar-expanded-width;
+    .inner {
+      .menu {
+        > .hide-toggle {
+          span {
+            left: 25px;
+            transform: translateX(0);
+            visibility: visible;
+            opacity: 1;
+          }
+          &:after {
+            content: $fa-var-chevron-left;
+          }
+        }
+        > ul {
+          > li {
+            > a {
+              span {
+                visibility: visible;
+                opacity: 1;
+              }
+            }
+          }
+          &.second {
+            > li {
+              > a {
+                span {
+                  visibility: visible;
+                  opacity: 1;
                 }
               }
             }

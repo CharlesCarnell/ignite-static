@@ -13,8 +13,13 @@ $topbar-title-font-size:                            24px;
   #body {
     background: $body-background;
     display: inline-block;
-    width: calc(100% - #{$sidebar-expanded-width});
+    width: calc(100% - #{$sidebar-width});
+
     height: 100%;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
     .inner {
       .topbar {
         background: $topbar-background;
@@ -36,6 +41,9 @@ $topbar-title-font-size:                            24px;
         @extend .clearfix;
       }
     }
+  }
+  #sidebar.expanded ~ #body {
+    width: calc(100% - #{$sidebar-expanded-width});
   }
 }
 

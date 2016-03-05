@@ -8,26 +8,32 @@ $topbar-topbar-border-bottom:                       #EDEDED;
 $topbar-title-color:                                #2F9BE7;
 $topbar-title-font-size:                            24px;
 
-#body {
-  background: $body-background;
-  display: inline-block;
-  width: calc(100% - #{$sidebar-expanded-width});
-  height: 100%;
-  .inner {
-    .topbar {
-      background: $topbar-background;
-      height: $topbar-height;
-      border-bottom: 1px solid $topbar-topbar-border-bottom;
-      position: relative;
-      .title {
-        position: absolute;
-        top: 50%;
-        left: 30px;
-        transform: translateY(-50%);
-        a {
-          color: $topbar-title-color;
-          font-size: $topbar-title-font-size;
+.bodywrap {
+  background: $sidebar-background-color;
+  #body {
+    background: $body-background;
+    display: inline-block;
+    width: calc(100% - #{$sidebar-expanded-width});
+    height: 100%;
+    .inner {
+      .topbar {
+        background: $topbar-background;
+        height: $topbar-height;
+        border-bottom: 1px solid $topbar-topbar-border-bottom;
+        position: relative;
+        .title {
+          position: absolute;
+          top: 50%;
+          left: 30px;
+          transform: translateY(-50%);
+          a {
+            color: $topbar-title-color;
+            font-size: $topbar-title-font-size;
+          }
         }
+      }
+      .body {
+        @extend .clearfix;
       }
     }
   }

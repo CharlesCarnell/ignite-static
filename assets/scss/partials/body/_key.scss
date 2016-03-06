@@ -9,19 +9,17 @@ $key-status-not-started-background:                 #CCC;
 $key-status-not-applicable-background:              #929292;
 
 .key {
-  margin: 50px 0px 40px 15px;
+  margin: 20px 0px 20px 15px;
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
     li {
       font-size: $key-status-font-size;
-      display: inline-block;
+      display: block;
       margin: 0;
-      padding: 0;
+      padding: 3px 0px 3px 18px;
       position: relative;
-      margin-left: 18px;
-      padding-left: 18px;
       list-style: none;
       &:before {
         content: ' ';
@@ -67,10 +65,16 @@ $key-status-not-applicable-background:              #929292;
 }
 
 @media #{$small-up} {
+  .key {
+  }
 }
 @media #{$medium-up} {
+  .key {
+  }
 }
 @media #{$large-up} {
+  .key {
+  }
 }
 @media #{$large-only} {
 }
@@ -79,6 +83,16 @@ $key-status-not-applicable-background:              #929292;
 @media #{$xlarge-only} {
 }
 @media #{$xxlarge-up} {
+  .key {
+    margin: 50px 0px 40px 15px;
+    ul {
+      li {
+        display: inline-block;
+        margin-left: 18px;
+        padding: 0px 0px 0px 18px;
+      }
+    }
+  }
 }
 @media #{$xxlarge-only} {
 }

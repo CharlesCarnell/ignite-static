@@ -3,6 +3,7 @@
 
 $body-background:															      #F9F9F9;
 $topbar-height:                                     70px;
+$topbar-height-lt-xl:                               100px;
 $topbar-background:                                 #FEFEFE;
 $topbar-topbar-border-bottom:                       #EDEDED;
 $topbar-title-color:                                #2F9BE7;
@@ -14,7 +15,6 @@ $topbar-title-font-size:                            24px;
     background: $body-background;
     display: inline-block;
     width: calc(100% - #{$sidebar-width});
-
     height: 100%;
     -webkit-transition: all 500ms ease;
     -moz-transition: all 500ms ease;
@@ -23,9 +23,13 @@ $topbar-title-font-size:                            24px;
     .inner {
       .topbar {
         background: $topbar-background;
-        height: $topbar-height;
+        height: $topbar-height-lt-xl;
         border-bottom: 1px solid $topbar-topbar-border-bottom;
         position: relative;
+        -webkit-transition: all 500ms ease;
+        -moz-transition: all 500ms ease;
+        -o-transition: all 500ms ease;
+        transition: all 500ms ease;
         .title {
           position: absolute;
           top: 50%;
@@ -56,6 +60,15 @@ $topbar-title-font-size:                            24px;
 @media #{$large-only} {
 }
 @media #{$xlarge-up} {
+  .bodywrap {
+    #body {
+      .inner {
+        .topbar {
+          height: $topbar-height;
+        }
+      }
+    }
+  }
 }
 @media #{$xlarge-only} {
 }

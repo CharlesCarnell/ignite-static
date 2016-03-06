@@ -6,9 +6,12 @@ $topbar-breadcrumb-font-size:                       16px;
 
 .breadcrumbs {
   position: absolute;
-  top: 50%;
-  left: 160px;
-  transform: translateY(-50%);
+  top: 60px;
+  left: 30px;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
   ul {
     margin: 0;
     padding: 0;
@@ -53,6 +56,11 @@ $topbar-breadcrumb-font-size:                       16px;
 @media #{$large-only} {
 }
 @media #{$xlarge-up} {
+  .breadcrumbs {
+    top: 50%;
+    left: 160px;
+    transform: translateY(-50%);
+  }
 }
 @media #{$xlarge-only} {
 }

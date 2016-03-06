@@ -5,8 +5,10 @@ $header-height:                                     76px;
 $header-background-color:                           #2F9BE7;
 $header-dropdown-border-color:                      #2A8ACE;
 $header-dropdown-title-color:                       #BDDAF2;
-$header-dropdown-title-font-size:                   13px;
-$header-dropdown-value-font-size:                   18px;
+$header-dropdown-title-font-size:                   12px;
+$header-dropdown-value-font-size:                   14px;
+$header-dropdown-title-font-size-gt-md:             13px;
+$header-dropdown-value-font-size-gt-md:             18px;
 $header-dropdown-value-color:                       #FFF;
 $header-dropdown-chevron-color:                     #96CCF3;
 
@@ -24,11 +26,28 @@ header {
       margin-left: 23px;
       float: left;
     }
+    .hamburger {
+      display: block;
+      width: 20px;
+      position: absolute;
+      top: 50%;
+      right: 30px;
+      cursor: pointer;
+      span {
+        background: #FFf;
+        display: block;
+        width: 100%;
+        height: 3px;
+        margin-bottom: 2px;
+        border-radius: 3px;
+      }
+    }
     .dropdown-menus {
+      display: none;
       float: right;
       .item {
         display: inline-block;
-        padding: 23px 100px 23px 23px;
+        padding: 23px 12px 23px 12px;
         border-left: 1px solid $header-dropdown-border-color;
         position: relative;
         cursor: pointer;
@@ -46,9 +65,10 @@ header {
           @include fa-icon();
           content: $fa-var-chevron-down;
           color: $header-dropdown-chevron-color;
+          font-size: 12px;
           position: absolute;
-          top: 50%;
-          right: 5px;
+          top: 35%;
+          right: 25px;
           transform: translateY(-50%);
         }
         &:hover {
@@ -64,12 +84,54 @@ header {
 @media #{$small-up} {
 }
 @media #{$medium-up} {
+  header {
+    .topbar-desktop {
+      .hamburger {
+        display: none;
+      }
+      .dropdown-menus {
+        display: block;
+      }
+    }
+  }
 }
 @media #{$large-up} {
+  header {
+    .topbar-desktop {
+      .dropdown-menus {
+        .item {
+          padding: 23px 20px 23px 23px;
+          .title {
+            font-size: $header-dropdown-title-font-size-gt-md;
+          }
+          .value {
+            font-size: $header-dropdown-value-font-size-gt-md;
+          }
+          &:after {
+            top: 33%;
+          }
+        }
+      }
+    }
+  }
 }
 @media #{$large-only} {
 }
 @media #{$xlarge-up} {
+  header {
+    .topbar-desktop {
+      .dropdown-menus {
+        .item {
+          padding: 23px 100px 23px 23px;
+          &:after {
+            font-size: 18px;
+            top: 50%;
+            right: 5px;
+          }
+        }
+      }
+    }
+  }
 }
 @media #{$xlarge-only} {
 }

@@ -7,6 +7,7 @@ var functions = {
   },
 
   windowLoad: function(){
+    this.responsiveTable.load();
   },
 
   webfonts: function(){
@@ -196,14 +197,93 @@ var functions = {
     close: function(){
       $('#sidebar').removeClass('expanded');
     }
-  }
+  },
 
+  responsiveTable: {
+    init: function(){
+      if( $('table.responsive').length ){
+        this.responsiveTable();
+      }
+    },
+    load: function(){
+      if( $('table.responsive').length ){
+        this.responsiveTable();
+        this.updateTables();
+      }
+    },
+    responsiveTable: function(){
+      this.switched = false;
+      this.attachEvents();
+    },
+    attachEvents: function(){
+      // $(window).on("redraw",function(){
+        // this.updateTables();
+      // });
+      // $(window).on("resize", this.updateTables);
+    },
+    updateTables: function(){
+      var splitTable = this.splitTable.bind(this);
+      // if( ($(window).width() < 99999) && !this.switched ){
+        // this.switched = true;
+        $("table.responsive").each(function(i, element) {
+          splitTable($(element));
+        });
+        // return true;
+      // } else if( this.switched && ($(window).width() > 99999) ) {
+        // this.switched = false;
+        // $("table.responsive").each(function(i, element) {
+          // unsplitTable($(element));
+        // });
+      // }
+    },
+    splitTable: function(original){
+      original.wrap("<div class='table-wrapper' />");
+      var copy = original.clone();
+      copy.find("td:not(:nth-child(1)), th:not(:nth-child(1))").css("display", "none");
+      copy.find("td:nth-child(2), th:nth-child(2)").css("display", "table-cell");
+      copy.find("tbody td:nth-child(3), tbody th:nth-child(3)").css("display", "table-cell");
+      copy.find('th:nth-child(2)').attr('colspan', 2);
+      copy.removeClass("responsive");
+
+      original.closest(".table-wrapper").append(copy);
+      copy.wrap("<div class='pinned' />");
+      original.wrap("<div class='scrollable' />");
+
+      $('.table-wrapper .scrollable').css('margin-left', $('.pinned table').width());
+      $('.pinned').css('width', $('.pinned table').width());
+      this.setCellHeights(original, copy);
+    },
+    unsplitTable: function(original){
+      original.closest(".table-wrapper").find(".pinned").remove();
+      original.unwrap();
+      original.unwrap();
+    },
+    setCellHeights: function(original, copy){
+      var tr = original.find('tr');
+      var tr_copy = copy.find('tr');
+      var heights = [];
+
+      tr.each(function(index){
+        var self = $(this);
+        var tx = self.find('th, td');
+
+        tx.each(function(){
+          var height = $(this).height();
+          heights[index] = heights[index] || 0;
+          if (height > heights[index]) heights[index] = height;
+        });
+      });
+
+      tr_copy.each(function(index){
+        $(this).height(heights[index]);
+      });
+    }
+  }
 };
 
 $(document).ready(function(){
   functions.init();
 });
-
 
 $(window).load(function(){
   functions.windowLoad();

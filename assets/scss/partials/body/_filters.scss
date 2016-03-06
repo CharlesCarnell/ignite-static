@@ -6,9 +6,13 @@ $topbar-filter-button-background:                   #FFF;
 
 .filters {
   position: absolute;
-  top: 50%;
+  top: 40%;
   right: 130px;
   transform: translateY(-50%);
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
   .buttons {
     a {
       color: $topbar-filter-button-color;
@@ -50,6 +54,9 @@ $topbar-filter-button-background:                   #FFF;
 @media #{$medium-up} {
 }
 @media #{$large-up} {
+  .filters {
+    top: 50%;
+  }
 }
 @media #{$large-only} {
 }

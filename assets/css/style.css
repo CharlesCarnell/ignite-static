@@ -452,10 +452,10 @@ img {
 .right {
   float: right !important; }
 
-.clearfix:before, .clearfix:after {
+.clearfix:before, .bodywrap #body .inner .body:before, .clearfix:after, .bodywrap #body .inner .body:after {
   content: " ";
   display: table; }
-.clearfix:after {
+.clearfix:after, .bodywrap #body .inner .body:after {
   clear: both; }
 
 .hide {
@@ -1601,10 +1601,10 @@ img {
 .right {
   float: right !important; }
 
-.clearfix:before, .clearfix:after {
+.clearfix:before, .bodywrap #body .inner .body:before, .clearfix:after, .bodywrap #body .inner .body:after {
   content: " ";
   display: table; }
-.clearfix:after {
+.clearfix:after, .bodywrap #body .inner .body:after {
   clear: both; }
 
 .hide {
@@ -2029,10 +2029,10 @@ img {
 .right {
   float: right !important; }
 
-.clearfix:before, .clearfix:after {
+.clearfix:before, .bodywrap #body .inner .body:before, .clearfix:after, .bodywrap #body .inner .body:after {
   content: " ";
   display: table; }
-.clearfix:after {
+.clearfix:after, .bodywrap #body .inner .body:after {
   clear: both; }
 
 .hide {
@@ -2154,10 +2154,10 @@ img {
 .right {
   float: right !important; }
 
-.clearfix:before, .clearfix:after {
+.clearfix:before, .bodywrap #body .inner .body:before, .clearfix:after, .bodywrap #body .inner .body:after {
   content: " ";
   display: table; }
-.clearfix:after {
+.clearfix:after, .bodywrap #body .inner .body:after {
   clear: both; }
 
 .hide {
@@ -2824,10 +2824,10 @@ img {
 .right {
   float: right !important; }
 
-.clearfix:before, .clearfix:after {
+.clearfix:before, .bodywrap #body .inner .body:before, .clearfix:after, .bodywrap #body .inner .body:after {
   content: " ";
   display: table; }
-.clearfix:after {
+.clearfix:after, .bodywrap #body .inner .body:after {
   clear: both; }
 
 .hide {
@@ -2983,10 +2983,10 @@ img {
 .right {
   float: right !important; }
 
-.clearfix:before, .clearfix:after {
+.clearfix:before, .bodywrap #body .inner .body:before, .clearfix:after, .bodywrap #body .inner .body:after {
   content: " ";
   display: table; }
-.clearfix:after {
+.clearfix:after, .bodywrap #body .inner .body:after {
   clear: both; }
 
 .hide {
@@ -3151,10 +3151,10 @@ img {
 .right {
   float: right !important; }
 
-.clearfix:before, .clearfix:after {
+.clearfix:before, .bodywrap #body .inner .body:before, .clearfix:after, .bodywrap #body .inner .body:after {
   content: " ";
   display: table; }
-.clearfix:after {
+.clearfix:after, .bodywrap #body .inner .body:after {
   clear: both; }
 
 .hide {
@@ -3659,10 +3659,10 @@ img {
 .right {
   float: right !important; }
 
-.clearfix:before, .clearfix:after {
+.clearfix:before, .bodywrap #body .inner .body:before, .clearfix:after, .bodywrap #body .inner .body:after {
   content: " ";
   display: table; }
-.clearfix:after {
+.clearfix:after, .bodywrap #body .inner .body:after {
   clear: both; }
 
 .hide {
@@ -3784,10 +3784,10 @@ img {
 .right {
   float: right !important; }
 
-.clearfix:before, .clearfix:after {
+.clearfix:before, .bodywrap #body .inner .body:before, .clearfix:after, .bodywrap #body .inner .body:after {
   content: " ";
   display: table; }
-.clearfix:after {
+.clearfix:after, .bodywrap #body .inner .body:after {
   clear: both; }
 
 .hide {
@@ -4710,10 +4710,10 @@ img {
 .right {
   float: right !important; }
 
-.clearfix:before, .clearfix:after {
+.clearfix:before, .bodywrap #body .inner .body:before, .clearfix:after, .bodywrap #body .inner .body:after {
   content: " ";
   display: table; }
-.clearfix:after {
+.clearfix:after, .bodywrap #body .inner .body:after {
   clear: both; }
 
 .hide {
@@ -6980,6 +6980,59 @@ th.hide-for-touch {
 .fa-medium:before {
   content: ""; }
 
+/* Foundation v2.1.4 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+table th {
+  font-weight: bold; }
+
+table td, table th {
+  padding: 9px 10px;
+  text-align: left; }
+
+.pinned {
+  width: 35%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  overflow-x: scroll; }
+  .pinned table {
+    width: 100%;
+    border-right: none;
+    border-left: none; }
+    .pinned table td:last-child {
+      border-bottom: 0; }
+    .pinned table th, .pinned table td {
+      white-space: nowrap; }
+
+.table-wrapper {
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden; }
+  .table-wrapper .scrollable {
+    margin-left: 35%;
+    overflow: scroll;
+    overflow-y: hidden; }
+
+table.responsive {
+  margin-bottom: 0; }
+  table.responsive.pinned {
+    display: none; }
+  table.responsive td, table.responsive th {
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden; }
+  table.responsive th:nth-child(1) {
+    display: none; }
+  table.responsive th:nth-child(2) {
+    display: none; }
+  table.responsive td:nth-child(1) {
+    display: none; }
+  table.responsive td:nth-child(2) {
+    display: none; }
+  table.responsive td:nth-child(3) {
+    display: none; }
+
 .iso_logo_footer_big {
   width: 79px;
   height: 69px;
@@ -7182,14 +7235,32 @@ a.skip-main:focus, a.skip-main:active {
       font-size: 30px;
       line-height: 2.08rem;
       margin: 30px 0px 20px 0px; } }
+#infoTooltip {
+  background: #FFFFFF;
+  display: none;
+  padding: 8px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 1px solid #D8D8D8;
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.24); }
+  #infoTooltip .inner p {
+    font-size: 12px;
+    line-height: 1rem;
+    margin: 0; }
+  #infoTooltip.show {
+    display: block; }
+
 #sidebar {
   background: #373942;
   display: inline-block;
   width: 80px;
   height: 100%;
-  float: left; }
-  #sidebar.expanded {
-    width: 230px; }
+  float: left;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease; }
   #sidebar .inner .menu > .hide-toggle {
     color: #747780;
     font-size: 18px;
@@ -7200,7 +7271,13 @@ a.skip-main:focus, a.skip-main:active {
       text-transform: uppercase;
       position: absolute;
       bottom: 10px;
-      left: 25px; }
+      left: 50%;
+      visibility: hidden;
+      opacity: 0;
+      -webkit-transition: all 200ms ease;
+      -moz-transition: all 200ms ease;
+      -o-transition: all 200ms ease;
+      transition: all 200ms ease; }
     #sidebar .inner .menu > .hide-toggle:after {
       display: inline-block;
       font: normal normal normal 14px/1 FontAwesome;
@@ -7209,11 +7286,12 @@ a.skip-main:focus, a.skip-main:active {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       transform: translate(0, 0);
-      content: "";
+      content: "";
       font-size: 13px;
       position: absolute;
       bottom: 16px;
-      left: 10px; }
+      left: 50%;
+      transform: translateX(-50%); }
   #sidebar .inner .menu > ul {
     margin: 0;
     padding: 0;
@@ -7252,7 +7330,13 @@ a.skip-main:focus, a.skip-main:active {
           position: absolute;
           top: 50%;
           left: 50px;
-          transform: translateY(-50%); }
+          transform: translateY(-50%);
+          visibility: hidden;
+          opacity: 0;
+          -webkit-transition: all 500ms ease;
+          -moz-transition: all 500ms ease;
+          -o-transition: all 500ms ease;
+          transition: all 500ms ease; }
         #sidebar .inner .menu > ul > li > a:before {
           display: inline-block;
           font: normal normal normal 14px/1 FontAwesome;
@@ -7285,7 +7369,13 @@ a.skip-main:focus, a.skip-main:active {
               position: absolute;
               top: 50%;
               left: 50px;
-              transform: translateY(-50%); }
+              transform: translateY(-50%);
+              visibility: hidden;
+              opacity: 0;
+              -webkit-transition: all 500ms ease;
+              -moz-transition: all 500ms ease;
+              -o-transition: all 500ms ease;
+              transition: all 500ms ease; }
             #sidebar .inner .menu > ul > li ul.second > li > a:after {
               display: inline-block;
               font: normal normal normal 14px/1 FontAwesome;
@@ -7300,6 +7390,22 @@ a.skip-main:focus, a.skip-main:active {
               top: 50%;
               left: 21px;
               transform: translateY(-50%); }
+  #sidebar.expanded {
+    width: 230px; }
+    #sidebar.expanded .inner .menu > .hide-toggle span {
+      left: 25px;
+      visibility: visible;
+      opacity: 1; }
+    #sidebar.expanded .inner .menu > .hide-toggle:after {
+      content: "";
+      left: 10px;
+      transform: translateX(0%); }
+    #sidebar.expanded .inner .menu > ul > li > a span {
+      visibility: visible;
+      opacity: 1; }
+    #sidebar.expanded .inner .menu > ul.second > li > a span {
+      visibility: visible;
+      opacity: 1; }
 
 #sidebar .inner .menu > ul > li.dashboard > a:before {
   content: ""; }
@@ -7314,24 +7420,32 @@ a.skip-main:focus, a.skip-main:active {
 #sidebar .inner .menu > ul > li.admin > a:before {
   content: ""; }
 
-#body {
-  background: #F9F9F9;
-  display: inline-block;
-  width: calc(100% - 230px);
-  height: 100%; }
-  #body .inner .topbar {
-    background: #FEFEFE;
-    height: 70px;
-    border-bottom: 1px solid #EDEDED;
-    position: relative; }
-    #body .inner .topbar .title {
-      position: absolute;
-      top: 50%;
-      left: 30px;
-      transform: translateY(-50%); }
-      #body .inner .topbar .title a {
-        color: #2F9BE7;
-        font-size: 24px; }
+.bodywrap {
+  background: #373942; }
+  .bodywrap #body {
+    background: #F9F9F9;
+    display: inline-block;
+    width: calc(100% - 80px);
+    height: 100%;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease; }
+    .bodywrap #body .inner .topbar {
+      background: #FEFEFE;
+      height: 70px;
+      border-bottom: 1px solid #EDEDED;
+      position: relative; }
+      .bodywrap #body .inner .topbar .title {
+        position: absolute;
+        top: 50%;
+        left: 30px;
+        transform: translateY(-50%); }
+        .bodywrap #body .inner .topbar .title a {
+          color: #2F9BE7;
+          font-size: 24px; }
+  .bodywrap #sidebar.expanded ~ #body {
+    width: calc(100% - 230px); }
 
 .breadcrumbs {
   position: absolute;
@@ -7523,7 +7637,7 @@ a.skip-main:focus, a.skip-main:active {
           font-size: 15px;
           text-align: left;
           width: 359px;
-          padding: 18px 18px; }
+          padding: 15px 18px; }
       .dashboard-view-table table tbody tr.heading {
         background: #FFFFFF; }
         .dashboard-view-table table tbody tr.heading td {
